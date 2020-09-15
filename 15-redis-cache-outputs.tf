@@ -9,9 +9,9 @@ data "null_data_source" "redis_cache_outputs" {
 }
 
 output "redis_cache_result" {
-  value = "${data.null_data_source.redis_cache_outputs.inputs}"
+  value = "${data.null_data_source.redis_cache_outputs.*.inputs}"
 }
 
 output "redis_cache_result_json" {
-  value = "${jsonencode(data.null_data_source.redis_cache_outputs.inputs)}"
+  value = "${jsonencode(data.null_data_source.redis_cache_outputs.*.inputs)}"
 }

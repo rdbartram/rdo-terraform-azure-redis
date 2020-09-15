@@ -74,7 +74,7 @@ resource "azurerm_redis_cache" "redis_cache_premium" {
     rdb_backup_enabled            = "${var.redis_cache_premium_rdb_backup_enabled}"
     rdb_backup_frequency          = "${var.redis_cache_premium_rdb_backup_frequency}"
     rdb_backup_max_snapshot_count = "${var.redis_cache_premium_rdb_backup_max_snapshot_count}"
-    rdb_storage_connection_string = "DefaultEndpointsProtocol=https;BlobEndpoint=${azurerm_storage_account.redis_cache_storage_account.primary_blob_endpoint};AccountName=${azurerm_storage_account.redis_cache_storage_account.name};AccountKey=${azurerm_storage_account.redis_cache_storage_account.primary_access_key}"
+    rdb_storage_connection_string = "DefaultEndpointsProtocol=https;BlobEndpoint=${azurerm_storage_account.redis_cache_storage_account[0].primary_blob_endpoint};AccountName=${azurerm_storage_account.redis_cache_storage_account[0].name};AccountKey=${azurerm_storage_account.redis_cache_storage_account[0].primary_access_key}"
   }
 
   patch_schedule {

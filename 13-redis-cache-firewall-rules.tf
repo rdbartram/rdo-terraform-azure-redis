@@ -24,7 +24,7 @@ resource "azurerm_redis_firewall_rule" "redis_cache_standard_firewall_rule" {
             )}"
 
   resource_group_name = "${var.resource_group_name}"
-  redis_cache_name    = "${azurerm_redis_cache.redis_cache_standard.name}"
+  redis_cache_name    = "${azurerm_redis_cache.redis_cache_standard[0].name}"
 
   end_ip = "${element(
         split(":",
@@ -59,7 +59,7 @@ resource "azurerm_redis_firewall_rule" "redis_cache_premium_firewall_rule" {
             )}"
 
   resource_group_name = "${var.resource_group_name}"
-  redis_cache_name    = "${azurerm_redis_cache.redis_cache_premium.name}"
+  redis_cache_name    = "${azurerm_redis_cache.redis_cache_premium[0].name}"
 
   end_ip = "${element(
         split(":",
