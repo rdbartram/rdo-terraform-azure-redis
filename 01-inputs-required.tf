@@ -8,6 +8,8 @@ variable "network_shortname" {}
 
 variable "network_resource_group_name" {}
 
+variable "redis_endpoint_subnet_id" {}
+
 variable "resource_group_name" {}
 
 variable "service_shortname" {}

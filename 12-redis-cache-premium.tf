@@ -63,7 +63,7 @@ resource "azurerm_redis_cache" "redis_cache_premium" {
         )}"
 
   enable_non_ssl_port = "${var.redis_cache_enable_non_ssl_port}"
-  subnet_id           = "${data.azurerm_subnet.public.id}"
+  subnet_id           = "${var.redis_endpoint_subnet_id}"
 
   shard_count = "${var.redis_cache_premium_shard_count}"
 
